@@ -1,10 +1,10 @@
-# Use an official Node.js image as the base image
-FROM node:14
+# Use a Node.js version that supports nullish coalescing assignment
+FROM node:18
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
@@ -16,5 +16,5 @@ COPY . .
 # Expose the port the app runs on
 EXPOSE 5000
 
-# Run the application
+# Start the application
 CMD ["npm", "start"]
