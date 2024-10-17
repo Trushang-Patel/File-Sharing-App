@@ -23,4 +23,4 @@ FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Expose the port
-EXPOSE 80
+EXPOSE 3000
