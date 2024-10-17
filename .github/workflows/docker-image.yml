@@ -23,14 +23,14 @@ jobs:
 
       # Step 3: Build and push the backend Docker image
       - name: Build and push Backend Docker image
-        working-directory: ./mern/backend
+        working-directory: ./server
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/mern-backend:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/mern-backend:latest
 
       # Step 4: Build and push the frontend Docker image
       - name: Build and push Frontend Docker image
-        working-directory: ./mern/frontend
+        working-directory: ./client
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/mern-frontend:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/mern-frontend:latest
